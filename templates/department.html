@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+{%load static%}
+{% block title%}department
+{%endblock%}
+
+{% block content %}
+  <div class="heading-bg4">
+    <br>
+    <h2 class="text-center">Our Departments</h2>
+    <br>
+  </div>
+    <div class="department-bg">
+      <br>
+      <br>
+     {% for d in dept %}
+       
+        <div class="mx-auto w-50 bg-success
+         text-center text-white p-3  border border-warning rounded" >
+          <h1>{{d.dep_name}}</h1>
+         <P>{{d.dep_description}}</P>
+        </div>
+      
+     {% endfor %}
+     <br>
+     <br>
+     <br>
+  </div>
+{%endblock%}
