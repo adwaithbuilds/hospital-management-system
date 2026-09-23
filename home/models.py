@@ -15,6 +15,7 @@ class doctors(models.Model):
         ('Neurologist', 'Neurologist'),
         ('Psychologist', 'Psychologist'),
         ('Paediatrician', 'Paediatrician'),
+        ('ENT Specialist', 'ENT Specialist'),
     ]
 
    
