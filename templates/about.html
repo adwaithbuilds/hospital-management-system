@@ -1,142 +1,195 @@
-{% extends 'base.html'%}
-{%load static%}
-{% block title%}about
-{%endblock%}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us | City Hospital{% endblock %}
 
 {% block content %}
 
-<div class="container my-5 w-100 ">
-    <div class="row align-items-center g-5 about-bg ">
-
-        <!-- Left Side -->
-          <!-- Left Content -->
-            <div class="col-lg-5">
-
-                <h6 class="section-title">
-                    ABOUT US
-                </h6>
-
-                <h1 class="display-4 fw-bold mb-4">
-                    Compassionate Care,<br>
-                    Every Step of the Way
-                </h1>
-
-                <p class="lead text-muted mb-4">
-                    At City Hospital, we are committed to providing exceptional
-                    healthcare with compassion and integrity. Our mission is to
-                    improve the health and well-being of our community through
-                    advanced medical care, innovation, and a patient-first approach.
-                </p>
-
-                <a href="http://127.0.0.1:8000/booking/" class="btn mission-btn">
-                    <i class="bi bi-heart-pulse me-2"></i>
-                    Book Appointment
-                </a>
-
-            </div>
-
-
-        <!-- Right Side -->
-        <div class="col-md-6 image-container">
-
-        </div>
-
-        <section class="py-5 bg-white">
-
-    <div class="container">
-
-        <div class="row g-4">
-
-            <div class="col-lg-3 col-md-6">
-
-                <div class="stat-card">
-
-                    <div class="icon-circle">
-                        <i class="bi bi-people-fill"></i>
-                    </div>
-
-                    <h2>20+</h2>
-
-                    <h5>Years of Excellence</h5>
-
-                    <p>
-                        Delivering trusted healthcare services since 2002.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-
-                <div class="stat-card">
-
-                    <div class="icon-circle">
-                        <i class="bi bi-person-badge"></i>
-                    </div>
-
-                    <h2>75+</h2>
-
-                    <h5>Expert Doctors</h5>
-
-                    <p>
-                        Highly qualified and experienced medical professionals.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-
-                <div class="stat-card">
-
-                    <div class="icon-circle">
-                        <i class="bi bi-hospital"></i>
-                    </div>
-
-                    <h2>250+</h2>
-
-                    <h5>Hospital Beds</h5>
-
-                    <p>
-                        Modern facilities for comfortable treatment.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-
-                <div class="stat-card">
-
-                    <div class="icon-circle">
-                        <i class="bi bi-emoji-smile"></i>
-                    </div>
-
-                    <h2>50,000+</h2>
-
-                    <h5>Happy Patients</h5>
-
-                    <p>
-                        Thousands of patients trust us for better health.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
+<!-- Page Header -->
+<section class="page-header text-center">
+  <div class="container">
+    <span class="section-badge">About Our Hospital</span>
+    <h1 class="page-header-title">Compassionate Care, Every Step of the Way</h1>
+    <p class="page-header-desc">
+      For over two decades, City Hospital has been dedicated to improving the health and well-being of the communities we serve through excellence in clinical care and medical innovation.
+    </p>
+  </div>
 </section>
 
-    </div>
-</div>
+<!-- About Story Section -->
+<section class="py-5 bg-white">
+  <div class="container py-3">
+    <div class="row align-items-center g-5">
+      <!-- Left Content -->
+      <div class="col-lg-6">
+        <span class="section-badge">Our Mission &amp; Purpose</span>
+        <h2 class="section-title">Dedicated to Excellence in Patient-Centered Healthcare</h2>
+        
+        <p class="lead text-muted mb-4" style="font-size: 1.1rem; line-height: 1.7;">
+          At City Hospital, we combine clinical expertise, modern diagnostic tools, and deep personal compassion to deliver the highest standard of healing.
+        </p>
 
-    
+        <p class="text-muted mb-4">
+          Founded with the principle that quality healthcare should be accessible to all, our multi-specialty institution houses experienced surgeons, compassionate nursing staff, and round-the-clock emergency support teams.
+        </p>
+
+        <div class="row g-3 mb-4">
+          <div class="col-sm-6">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-patch-check-fill text-primary fs-5"></i>
+              <span class="fw-semibold">NABH Accredited</span>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-patch-check-fill text-primary fs-5"></i>
+              <span class="fw-semibold">Advanced ICUs &amp; OTs</span>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-patch-check-fill text-primary fs-5"></i>
+              <span class="fw-semibold">24/7 Trauma Services</span>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-patch-check-fill text-primary fs-5"></i>
+              <span class="fw-semibold">Digital Health Records</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-wrap gap-3">
+          <a href="{% url 'booking' %}" class="btn btn-primary rounded-pill px-4 py-2 fw-semibold shadow-sm d-inline-flex align-items-center gap-2">
+            <i class="bi bi-calendar-check"></i> Book Appointment
+          </a>
+          <a href="{% url 'contacts' %}" class="btn btn-outline-primary rounded-pill px-4 py-2 fw-semibold d-inline-flex align-items-center gap-2">
+            <i class="bi bi-geo-alt"></i> Contact Us
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Image -->
+      <div class="col-lg-6">
+        <div class="position-relative">
+          <img src="{% static 'images/hospital.jpg' %}" alt="City Hospital Building" class="img-fluid rounded-4 shadow-lg w-100" style="min-height: 400px; object-fit: cover;">
+          <div class="position-absolute top-0 end-0 m-4 p-3 bg-white rounded-3 shadow d-none d-sm-flex align-items-center gap-2 border">
+            <i class="bi bi-heart-pulse-fill text-danger fs-4"></i>
+            <div>
+              <div class="fw-bold small text-dark">50,000+ Smiles</div>
+              <small class="text-muted">Patients healed &amp; satisfied</small>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
-{%endblock%}
+  </div>
+</section>
+
+<!-- Stats Grid -->
+<section class="py-5 bg-light border-top border-bottom">
+  <div class="container py-3">
+    <div class="text-center mb-5">
+      <span class="section-badge">Milestones &amp; Trust</span>
+      <h2 class="section-title">Two Decades of Healthcare Leadership</h2>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-6">
+        <div class="feature-card-modern text-center">
+          <div class="icon-box-modern mx-auto">
+            <i class="bi bi-people-fill"></i>
+          </div>
+          <h2 class="display-6 fw-bold text-primary mb-1">20+</h2>
+          <h5 class="fw-bold mb-2">Years of Excellence</h5>
+          <p class="text-muted small mb-0">Delivering trusted healthcare services to families since 2002.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="feature-card-modern text-center">
+          <div class="icon-box-modern mx-auto">
+            <i class="bi bi-person-badge-fill"></i>
+          </div>
+          <h2 class="display-6 fw-bold text-primary mb-1">75+</h2>
+          <h5 class="fw-bold mb-2">Specialist Doctors</h5>
+          <p class="text-muted small mb-0">Highly qualified clinicians across more than 15 medical disciplines.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="feature-card-modern text-center">
+          <div class="icon-box-modern mx-auto">
+            <i class="bi bi-hospital-fill"></i>
+          </div>
+          <h2 class="display-6 fw-bold text-primary mb-1">250+</h2>
+          <h5 class="fw-bold mb-2">Hospital Beds</h5>
+          <p class="text-muted small mb-0">Modern inpatient facilities, ICUs, and private recuperation suites.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="feature-card-modern text-center">
+          <div class="icon-box-modern mx-auto">
+            <i class="bi bi-emoji-smile-fill"></i>
+          </div>
+          <h2 class="display-6 fw-bold text-primary mb-1">50,000+</h2>
+          <h5 class="fw-bold mb-2">Happy Patients</h5>
+          <p class="text-muted small mb-0">Thousands of individuals and families who rely on our care.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Core Values -->
+<section class="py-5 bg-white">
+  <div class="container py-3">
+    <div class="text-center mb-5">
+      <span class="section-badge">Our Values</span>
+      <h2 class="section-title">The Principles that Guide Our Practice</h2>
+      <p class="section-desc">We are committed to maintaining the highest ethical and clinical benchmarks in every patient interaction.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card-modern p-4 text-center h-100">
+          <div class="icon-box-modern mx-auto">
+            <i class="bi bi-shield-check"></i>
+          </div>
+          <h5 class="fw-bold mb-2">Integrity &amp; Ethics</h5>
+          <p class="text-muted small mb-0">
+            Transparent treatments, clear clinical counsel, and uncompromised patient confidentiality at all times.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card-modern p-4 text-center h-100">
+          <div class="icon-box-modern mx-auto">
+            <i class="bi bi-heart-pulse"></i>
+          </div>
+          <h5 class="fw-bold mb-2">Compassionate Care</h5>
+          <p class="text-muted small mb-0">
+            Listening attentively, treating patients like family, and prioritizing emotional comfort alongside medicine.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card-modern p-4 text-center h-100">
+          <div class="icon-box-modern mx-auto">
+            <i class="bi bi-cpu"></i>
+          </div>
+          <h5 class="fw-bold mb-2">Clinical Innovation</h5>
+          <p class="text-muted small mb-0">
+            Continually adopting modern surgical techniques, minimally invasive procedures, and digital healthcare.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

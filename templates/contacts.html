@@ -1,185 +1,208 @@
-{% extends 'base.html'%}
-{%load static%}
+{% extends 'base.html' %}
+{% load static %}
 
-{% block title%}contacts
-{%endblock%}
+{% block title %}Contact Us & Emergency Help | City Hospital{% endblock %}
 
 {% block content %}
 
+<!-- Page Header -->
+<section class="page-header text-center">
+  <div class="container">
+    <span class="section-badge">Get in Touch</span>
+    <h1 class="page-header-title">We're Here to Help You</h1>
+    <p class="page-header-desc">
+      Have questions about doctor appointments, medical specialties, or inpatient care? Our support desk is available around the clock.
+    </p>
+  </div>
+</section>
 
-<section class="contact-hero py-5">
+<!-- Contact Cards Section -->
+<section class="py-5 bg-white">
+  <div class="container py-2">
+    <div class="row g-4">
+      <!-- Address Card -->
+      <div class="col-md-4">
+        <div class="card-modern p-4 text-center h-100">
+          <div class="icon-box-modern mx-auto">
+            <i class="bi bi-geo-alt-fill"></i>
+          </div>
+          <h5 class="fw-bold mb-2">Hospital Location</h5>
+          <p class="text-muted small mb-3">
+            123 Medical Avenue, Connaught Place,<br>
+            New Delhi - 110001, India
+          </p>
+          <span class="badge bg-light text-primary border rounded-pill px-3 py-1 small">
+            Main Campus
+          </span>
+        </div>
+      </div>
 
-    <div class="container">
+      <!-- Phone Card -->
+      <div class="col-md-4">
+        <div class="card-modern p-4 text-center h-100">
+          <div class="icon-box-modern mx-auto">
+            <i class="bi bi-telephone-fill"></i>
+          </div>
+          <h5 class="fw-bold mb-2">Phone Lines</h5>
+          <p class="text-muted small mb-3">
+            <strong>Reception:</strong> <a href="tel:+919876543210" class="text-secondary">+91 9876543210</a><br>
+            <strong>Appointments:</strong> <a href="tel:+919876543211" class="text-secondary">+91 9876543211</a>
+          </p>
+          <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3 py-1 small">
+            24/7 Helpline Active
+          </span>
+        </div>
+      </div>
 
-        <div class="text-center mb-5">
+      <!-- Email Card -->
+      <div class="col-md-4">
+        <div class="card-modern p-4 text-center h-100">
+          <div class="icon-box-modern mx-auto">
+            <i class="bi bi-envelope-fill"></i>
+          </div>
+          <h5 class="fw-bold mb-2">Email Inquiries</h5>
+          <p class="text-muted small mb-3">
+            <strong>General:</strong> <a href="mailto:info@cityhospital.com" class="text-secondary">info@cityhospital.com</a><br>
+            <strong>Support:</strong> <a href="mailto:care@cityhospital.com" class="text-secondary">care@cityhospital.com</a>
+          </p>
+          <span class="badge bg-light text-primary border rounded-pill px-3 py-1 small">
+            Reply within 2 Hours
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <h6 class="section-title">CONTACT US</h6>
-
-            <h1 class="display-4 fw-bold">
-                We're Here to Help
-            </h1>
-
-            <p class="text-muted mx-auto" style="max-width:700px;">
-                Have questions or need assistance? Our team is available
-                24/7 to provide support and answer your healthcare inquiries.
-            </p>
-
+<!-- Contact Form & Hours Section -->
+<section class="py-5 bg-light border-top">
+  <div class="container py-3">
+    <div class="row g-5 align-items-center">
+      
+      <!-- Left: Visual & Working Hours -->
+      <div class="col-lg-5">
+        <div class="position-relative mb-4">
+          <img src="{% static 'images/contact2.jpg' %}" alt="City Hospital Reception" class="img-fluid rounded-4 shadow w-100" style="max-height: 280px; object-fit: cover;">
         </div>
 
-        <!---->
-
-        <div class="row g-4">
-
-            <div class="col-md-4">
-
-                <div class="contact-card">
-
-                    <div class="icon-circle">
-                        <i class="bi bi-geo-alt-fill"></i>
-                    </div>
-
-                    <h5>Our Location</h5>
-
-                    <p>
-                        123 Medical Avenue<br>
-                        New Delhi, India
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-4">
-
-                <div class="contact-card">
-
-                    <div class="icon-circle">
-                        <i class="bi bi-telephone-fill"></i>
-                    </div>
-
-                    <h5>Phone</h5>
-
-                    <p>
-                        +91 9876543210<br>
-                        +91 9876543211
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-4">
-
-                <div class="contact-card">
-
-                    <div class="icon-circle">
-                        <i class="bi bi-envelope-fill"></i>
-                    </div>
-
-                    <h5>Email</h5>
-
-                    <p>
-                        info@cityhospital.com<br>
-                        support@cityhospital.com
-                    </p>
-
-                </div>
-
-            </div>
-
+        <div class="card-modern p-4 bg-white">
+          <h5 class="fw-bold mb-3 d-flex align-items-center gap-2">
+            <i class="bi bi-clock-history text-primary"></i> Operating Hours
+          </h5>
+          
+          <ul class="list-unstyled mb-0 d-flex flex-column gap-2 small">
+            <li class="d-flex justify-content-between border-bottom pb-2">
+              <span class="text-muted">Emergency &amp; Trauma:</span>
+              <strong class="text-danger">24 Hours / 7 Days</strong>
+            </li>
+            <li class="d-flex justify-content-between border-bottom pb-2">
+              <span class="text-muted">OPD Consultations:</span>
+              <strong>Mon - Sat: 8:00 AM - 8:00 PM</strong>
+            </li>
+            <li class="d-flex justify-content-between border-bottom pb-2">
+              <span class="text-muted">Diagnostic Laboratory:</span>
+              <strong>Mon - Sun: 7:00 AM - 9:00 PM</strong>
+            </li>
+            <li class="d-flex justify-content-between pt-1">
+              <span class="text-muted">In-house Pharmacy:</span>
+              <strong class="text-success">24 Hours Open</strong>
+            </li>
+          </ul>
         </div>
+      </div>
+
+      <!-- Right: Message Form -->
+      <div class="col-lg-7">
+        <div class="card-modern p-4 p-md-5 bg-white">
+          <span class="section-badge">Direct Communication</span>
+          <h3 class="fw-bold mb-2">Send Us a Message</h3>
+          <p class="text-muted small mb-4">
+            Fill out the form below and our customer care team will get back to you promptly.
+          </p>
+
+          <form action="" method="GET" onsubmit="event.preventDefault(); alert('Thank you for reaching out! A care representative will contact you shortly.'); this.reset();">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold small">Full Name</label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light text-muted"><i class="bi bi-person"></i></span>
+                  <input type="text" class="form-control" placeholder="John Doe" required>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label fw-semibold small">Email Address</label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light text-muted"><i class="bi bi-envelope"></i></span>
+                  <input type="email" class="form-control" placeholder="john@example.com" required>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label fw-semibold small">Phone Number</label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light text-muted"><i class="bi bi-telephone"></i></span>
+                  <input type="tel" class="form-control" placeholder="+91 9876543210" required>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label fw-semibold small">Department / Subject</label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light text-muted"><i class="bi bi-tag"></i></span>
+                  <select class="form-select">
+                    <option selected>General Inquiry</option>
+                    <option>Cardiology</option>
+                    <option>Neurology</option>
+                    <option>Pediatrics</option>
+                    <option>Billing &amp; Insurance</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label class="form-label fw-semibold small">Your Message</label>
+                <textarea class="form-control" rows="4" placeholder="How can we assist you?" required></textarea>
+              </div>
+
+              <div class="col-12 mt-4">
+                <button class="btn btn-primary btn-primary-custom w-100 justify-content-center py-3 fs-6 rounded-pill fw-semibold shadow-sm" type="submit">
+                  <i class="bi bi-send-fill"></i>
+                  <span>Send Message</span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
 
     </div>
-
+  </div>
 </section>
 
-
-
-<!-- Contact Form -->
-
-<section class="py-5 bg-light">
-
-<div class="container">
-
-<div class="row g-5 align-items-center">
-
-<div class="col-lg-6">
-
-<img src="{% static 'images/contact2.jpg' %}"
-class="img-fluid rounded-4 shadow">
-
-</div>
-
-<div class="col-lg-6">
-
-<h2 class="fw-bold mb-4">
-Send Us a Message
-</h2>
-
-<form>
-
-<div class="mb-3">
-<input type="text"
-class="form-control"
-placeholder="Your Name">
-</div>
-
-<div class="mb-3">
-<input type="email"
-class="form-control"
-placeholder="Email Address">
-</div>
-
-<div class="mb-3">
-<input type="text"
-class="form-control"
-placeholder="Phone Number">
-</div>
-
-<div class="mb-3">
-<textarea class="form-control"
-rows="5"
-placeholder="Your Message"></textarea>
-</div>
-
-<button class=" btn btn-primary px-5" type="submit">
-Send Message
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-</div>
-
+<!-- Emergency Banner -->
+<section class="py-5 bg-white border-top">
+  <div class="container">
+    <div class="emergency-banner shadow-lg">
+      <div class="row align-items-center gy-4">
+        <div class="col-lg-8">
+          <span class="badge bg-danger text-white rounded-pill px-3 py-1 mb-3 fw-bold">
+            <i class="bi bi-shield-exclamation me-1"></i> Rapid Response Medical Unit
+          </span>
+          <h2 class="text-white fw-bold mb-2">Are You Experiencing a Medical Emergency?</h2>
+          <p class="text-light-subtle mb-0" style="color: #cbd5e1; max-width: 620px;">
+            Do not wait for form responses. Our trauma team and ambulance dispatch are available 24/7.
+          </p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a href="tel:+919876543210" class="btn btn-danger rounded-pill px-4 py-3 fw-bold d-inline-flex align-items-center gap-2 shadow">
+            <i class="bi bi-telephone-fill"></i>
+            <span>Emergency: +91 9876543210</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-
-
-
-
-<!-- Emergency -->
-
-<section class="emergency-section">
-
-<div class="container">
-
-<h2>
-24/7 Emergency Services
-</h2>
-
-<p>
-Call us immediately for emergency medical assistance.
-</p>
-
-<a href="tel:+919876543210" class="btn btn-light">
-<i class="bi bi-telephone-fill"></i>
-+91 9876543210
-</a>
-
-</div>
-
-</section>
-{%endblock%}
+{% endblock %}

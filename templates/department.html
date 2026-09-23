@@ -1,28 +1,89 @@
-{% extends 'base.html'%}
-{%load static%}
-{% block title%}department
-{%endblock%}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Medical Departments & Specialties | City Hospital{% endblock %}
 
 {% block content %}
-  <div class="heading-bg4">
-    <br>
-    <h2 class="text-center">Our Departments</h2>
-    <br>
+
+<!-- Page Header -->
+<section class="page-header text-center">
+  <div class="container">
+    <span class="section-badge">Centres of Excellence</span>
+    <h1 class="page-header-title">Our Medical Departments</h1>
+    <p class="page-header-desc">
+      Comprehensive specialized healthcare units staffed by leading consultants and equipped with advanced therapeutic medical equipment.
+    </p>
   </div>
-    <div class="department-bg">
-      <br>
-      <br>
-     {% for d in dept %}
-       
-        <div class="mx-auto w-50 bg-success
-         text-center text-white p-3  border border-warning rounded" >
-          <h1>{{d.dep_name}}</h1>
-         <P>{{d.dep_description}}</P>
+</section>
+
+<!-- Departments Grid Section -->
+<section class="py-5 bg-light">
+  <div class="container py-3">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      {% for d in dept %}
+        <div class="col">
+          <div class="dept-card">
+            <div class="dept-icon">
+              <i class="bi bi-heart-pulse-fill"></i>
+            </div>
+            
+            <h3 class="h4 fw-bold mb-2">{{ d.dep_name }}</h3>
+            
+            <p class="text-muted small mb-4 flex-grow-1" style="line-height: 1.6;">
+              {{ d.dep_description }}
+            </p>
+
+            <div class="pt-3 border-top d-flex align-items-center justify-content-between">
+              <a href="{% url 'doctors' %}" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                <i class="bi bi-people me-1"></i> View Doctors
+              </a>
+              <a href="{% url 'booking' %}" class="btn btn-sm btn-primary rounded-pill px-3 py-1 shadow-sm d-inline-flex align-items-center gap-1">
+                <i class="bi bi-calendar2-check"></i> Book Now
+              </a>
+            </div>
+          </div>
         </div>
-      
-     {% endfor %}
-     <br>
-     <br>
-     <br>
+      {% empty %}
+        <div class="col-12">
+          <div class="card-modern p-5 text-center my-4">
+            <div class="icon-box-modern mx-auto mb-3">
+              <i class="bi bi-diagram-3"></i>
+            </div>
+            <h4 class="fw-bold">No Departments Found</h4>
+            <p class="text-muted">Departments are currently being configured in the hospital registry.</p>
+            <a href="{% url 'contacts' %}" class="btn-primary-custom mt-2">
+              <i class="bi bi-telephone"></i> Contact Administration
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
   </div>
-{%endblock%}
+</section>
+
+<!-- Emergency & Ambulance Callout -->
+<section class="py-5 bg-white border-top">
+  <div class="container">
+    <div class="row align-items-center justify-content-between g-4">
+      <div class="col-lg-8">
+        <div class="d-flex align-items-start gap-3">
+          <div class="icon-box-modern flex-shrink-0" style="width: 50px; height: 50px; font-size: 1.4rem;">
+            <i class="bi bi-shield-plus"></i>
+          </div>
+          <div>
+            <h4 class="fw-bold mb-1">Looking for emergency or trauma admissions?</h4>
+            <p class="text-muted mb-0">Our Emergency Triage Department operates 24 hours a day without requiring prior appointments.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 text-lg-end">
+        <a href="tel:+919876543210" class="btn btn-danger rounded-pill px-4 py-3 fw-bold d-inline-flex align-items-center gap-2 shadow">
+          <i class="bi bi-telephone-fill"></i>
+          <span>Emergency: +91 9876543210</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

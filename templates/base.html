@@ -1,89 +1,224 @@
-{% load static%}
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <title>{% block title%}{%endblock%}</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}City Hospital | Leading Healthcare Provider{% endblock %}</title>
+  <meta name="description" content="City Hospital provides compassionate, high-quality medical care with top specialist doctors and advanced clinical facilities.">
 
-    <meta charset="utf-8">
-    <meta name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="stylesheet"
-      href=" https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css ">
-    <link rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  </head>
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <body>
+  <!-- Bootstrap 5.3 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
-    <nav class="navbar bg-primary navbar-expand-md ">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Healthcare CSS with cache-busting -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}?v=2.1">
+  {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+
+  <!-- Top Utility Bar -->
+  <header>
+    <div class="top-bar d-none d-md-block" style="background-color: #0f172a !important; color: #cbd5e1; font-size: 0.85rem; padding: 8px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
       <div class="container">
-        <div class="col-2 text-left pl-md-0">
-          <h3 class="text-white"> City Hospital </h3>
-        </div>
-        
-        <div
-          class="collapse navbar-collapse justify-content-center col-md-8 navbar-collapse-3">
-          <ul class="navbar-nav justify-content-center  fw-bold">
-            <li class="nav-item active">
-              <a class="nav-link text-white" href="{% url "home" %}">Home </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="{% url "about" %}">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="{% url "booking" %}">Booking</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="{% url "doctors" %}">Doctors</a>
-            </li>
-			 <li class="nav-item">
-              <a class="nav-link text-white" href="{% url "department" %}">Departments</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="{% url "contacts" %}">Contact Us</a>
-            </li>
-          </ul>
-        </div>
-        
-      </div>
-    </nav>
-
-
-
-{% block content%}
-
-{%endblock%}
-
-
-    
-	
-	
-    <section class="fixed-bottom">
-      <footer class="pt-2 pb-2  bg-primary text-light">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-12 col-md-8">
-              <h4>Emergency Contact Number: 0123456789</h4>
+        <div class="row align-items-center">
+          <div class="col-md-7 d-flex align-items-center gap-4">
+            <div>
+              <i class="bi bi-geo-alt-fill text-primary me-1"></i>
+              <span>123 Medical Avenue, New Delhi, India</span>
             </div>
-            <div class="col-12 col-md-4 mt-4 mt-md-0 text-center text-md-end">
-              © 2022 City Hospital. All Rights Reserved
+            <div>
+              <i class="bi bi-clock-fill text-primary me-1"></i>
+              <span>Mon - Sat: 8:00 AM - 9:00 PM</span>
             </div>
           </div>
+          <div class="col-md-5 d-flex justify-content-end align-items-center gap-3">
+            <span class="emergency-badge" style="background: rgba(239, 68, 68, 0.2); color: #fca5a5; padding: 2px 8px; border-radius: 4px; font-weight: 600;">
+              <i class="bi bi-heart-pulse-fill me-1"></i> 24/7 Emergency
+            </span>
+            <a href="tel:+919876543210" class="fw-semibold text-decoration-none text-light">
+              <i class="bi bi-telephone-fill me-1 text-primary"></i> +91 9876543210
+            </a>
+          </div>
         </div>
-      </footer>
-    </section>
+      </div>
+    </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"></script>
+    <!-- Main Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top bg-white border-bottom py-2 py-lg-3 shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none" href="{% url 'home' %}">
+          <div class="brand-icon bg-primary text-white rounded-3 d-flex align-items-center justify-content-center shadow-sm" style="width: 42px; height: 42px; font-size: 1.25rem;">
+            <i class="bi bi-hospital"></i>
+          </div>
+          <div class="d-flex flex-column lh-sm">
+            <span class="fw-bold text-dark fs-4">City<span class="text-primary">Hospital</span></span>
+            <small class="text-muted fw-normal" style="font-size: 0.72rem; letter-spacing: 0.05em;">HEALTHCARE &amp; RESEARCH</small>
+          </div>
+        </a>
 
+        <!-- Mobile Hamburger Toggler -->
+        {% comment %} <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> {% endcomment %}
 
-  </body>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+            <li class="nav-item">
+              <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active fw-bold text-primary{% endif %}" href="{% url 'home' %}">
+                Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active fw-bold text-primary{% endif %}" href="{% url 'about' %}">
+                About Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if request.resolver_match.url_name == 'department' %}active fw-bold text-primary{% endif %}" href="{% url 'department' %}">
+                Departments
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if request.resolver_match.url_name == 'doctors' %}active fw-bold text-primary{% endif %}" href="{% url 'doctors' %}">
+                Doctors
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if request.resolver_match.url_name == 'contacts' %}active fw-bold text-primary{% endif %}" href="{% url 'contacts' %}">
+                Contact
+              </a>
+            </li>
+          </ul>
 
+          <div class="d-flex align-items-center gap-3">
+            <a href="{% url 'booking' %}" class="btn btn-primary rounded-pill px-4 py-2 fw-semibold shadow-sm d-inline-flex align-items-center gap-2">
+              <i class="bi bi-calendar2-check-fill"></i>
+              <span>Book Appointment</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Body Content -->
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <!-- Modern Multi-Column Footer -->
+  <footer class="footer-modern">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Col 1: About & Brand -->
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <div class="brand-icon bg-primary text-white rounded-3 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px; font-size: 1rem;">
+              <i class="bi bi-hospital"></i>
+            </div>
+            <h4 class="text-white mb-0 fw-bold">City<span class="text-primary">Hospital</span></h4>
+          </div>
+          <p class="text-light-subtle mb-4 pe-lg-3" style="font-size: 0.92rem; color: #94a3b8;">
+            Dedicated to providing world-class, compassionate healthcare through advanced medical technology and experienced specialists. Your health is our highest mission.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle" style="width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center;">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle" style="width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center;">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle" style="width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center;">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle" style="width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center;">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="{% url 'home' %}"><i class="bi bi-chevron-right small text-primary"></i> Home</a></li>
+            <li><a href="{% url 'about' %}"><i class="bi bi-chevron-right small text-primary"></i> About Us</a></li>
+            <li><a href="{% url 'department' %}"><i class="bi bi-chevron-right small text-primary"></i> Departments</a></li>
+            <li><a href="{% url 'doctors' %}"><i class="bi bi-chevron-right small text-primary"></i> Our Doctors</a></li>
+            <li><a href="{% url 'booking' %}"><i class="bi bi-chevron-right small text-primary"></i> Appointments</a></li>
+            <li><a href="{% url 'contacts' %}"><i class="bi bi-chevron-right small text-primary"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Medical Services -->
+        <div class="col-lg-3 col-md-6 col-6">
+          <h5>Specialties</h5>
+          <ul class="footer-links">
+            <li><a href="{% url 'department' %}"><i class="bi bi-check2 text-primary"></i> Cardiology</a></li>
+            <li><a href="{% url 'department' %}"><i class="bi bi-check2 text-primary"></i> Neurology</a></li>
+            <li><a href="{% url 'department' %}"><i class="bi bi-check2 text-primary"></i> Pediatrics</a></li>
+            <li><a href="{% url 'department' %}"><i class="bi bi-check2 text-primary"></i> Dermatology</a></li>
+            <li><a href="{% url 'department' %}"><i class="bi bi-check2 text-primary"></i> Orthopedics</a></li>
+            <li><a href="{% url 'department' %}"><i class="bi bi-check2 text-primary"></i> 24/7 Diagnostics</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact & Hotline -->
+        <div class="col-lg-3 col-md-6">
+          <h5>Emergency &amp; Help</h5>
+          <div class="footer-contact-item">
+            <i class="bi bi-geo-alt"></i>
+            <span>123 Medical Avenue, New Delhi, India</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-telephone"></i>
+            <div>
+              <div>+91 9876543210</div>
+              <div class="small text-muted">Emergency Hotline (24/7)</div>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope"></i>
+            <span>info@cityhospital.com</span>
+          </div>
+          <div class="mt-3">
+            <a href="{% url 'booking' %}" class="btn btn-outline-light btn-sm w-100 py-2 rounded-pill fw-semibold">
+              <i class="bi bi-calendar-check me-1"></i> Book a Consultation
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <div>
+          &copy; 2026 City Hospital. All Rights Reserved.
+        </div>
+        <div class="d-flex gap-3 text-light-subtle">
+          <a href="{% url 'about' %}" class="text-secondary text-decoration-none">Privacy Policy</a>
+          <span>&bull;</span>
+          <a href="{% url 'about' %}" class="text-secondary text-decoration-none">Terms of Service</a>
+          <span>&bull;</span>
+          <a href="{% url 'contacts' %}" class="text-secondary text-decoration-none">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  {% block extra_js %}{% endblock %}
+
+</body>
 </html>

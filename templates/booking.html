@@ -1,27 +1,114 @@
-{% extends 'base.html'%}
-{%load static %}
+{% extends 'base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
-{% block title%}Booking
-{%endblock%}
+
+{% block title %}Book an Appointment | City Hospital{% endblock %}
 
 {% block content %}
 
-<div class="booking-bg">
-      <div class="heading-bg1">
-         <br>
-         <br>
-        <h2 class='text-center '> Make An Appointment</h2>
-        <br>
+<!-- Page Header -->
+<section class="page-header text-center">
+  <div class="container">
+    <span class="section-badge">Online Consultation</span>
+    <h1 class="page-header-title">Make An Appointment</h1>
+    <p class="page-header-desc">
+      Schedule a consultation with our experienced physicians and specialists. Fill in your details below for fast appointment verification.
+    </p>
+  </div>
+</section>
+
+<!-- Booking Form Section -->
+<section class="py-5 bg-light">
+  <div class="container py-2">
+    <div class="row g-5 align-items-stretch justify-content-center">
+      
+      <!-- Left Column: Patient Guidelines & Perks -->
+      <div class="col-lg-5">
+        <div class="booking-info-card">
+          <div>
+            <div class="d-inline-flex align-items-center gap-2 bg-white bg-opacity-20 px-3 py-1 rounded-pill text-white small fw-bold mb-4">
+              <i class="bi bi-clock-history"></i> Fast Verification
+            </div>
+            
+            <h3 class="text-white fw-bold mb-3">Why Book Online with City Hospital?</h3>
+            <p class="text-white-50 mb-4" style="line-height: 1.6;">
+              Avoid long waiting queues by securing your consultation slot ahead of time with our board-certified medical doctors.
+            </p>
+
+            <div class="d-flex flex-column gap-3 mb-4">
+              <div class="d-flex align-items-center gap-3">
+                <div class="rounded-circle bg-white text-primary d-flex align-items-center justify-content-center flex-shrink-0" style="width: 38px; height: 38px;">
+                  <i class="bi bi-calendar2-check-fill"></i>
+                </div>
+                <div>
+                  <h6 class="text-white mb-0 fw-bold">Priority Doctor Scheduling</h6>
+                  <small class="text-white-50">Guaranteed consultation slot upon arrival.</small>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center gap-3">
+                <div class="rounded-circle bg-white text-primary d-flex align-items-center justify-content-center flex-shrink-0" style="width: 38px; height: 38px;">
+                  <i class="bi bi-telephone-inbound-fill"></i>
+                </div>
+                <div>
+                  <h6 class="text-white mb-0 fw-bold">Instant Confirmation Call</h6>
+                  <small class="text-white-50">Our coordinators call you within 15 minutes.</small>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center gap-3">
+                <div class="rounded-circle bg-white text-primary d-flex align-items-center justify-content-center flex-shrink-0" style="width: 38px; height: 38px;">
+                  <i class="bi bi-shield-lock-fill"></i>
+                </div>
+                <div>
+                  <h6 class="text-white mb-0 fw-bold">Confidential &amp; Secure</h6>
+                  <small class="text-white-50">Strict adherence to patient privacy standards.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-top border-white border-opacity-25 mt-4">
+            <h6 class="text-white fw-bold mb-2">Emergency or Critical Situation?</h6>
+            <p class="text-white-50 small mb-3">Please do not wait for an online form confirmation if you need acute trauma care.</p>
+            <a href="tel:+919876543210" class="btn btn-light text-danger fw-bold rounded-pill w-100 py-2 d-inline-flex align-items-center justify-content-center gap-2">
+              <i class="bi bi-telephone-fill"></i> 24/7 Helpline: +91 9876543210
+            </a>
+          </div>
+        </div>
       </div>
-<div class="container w-25 text-center my-5 p-4 rounded" style="background-color:#e3f2fd;">
-   <form action="" method="POST">{% csrf_token %}
-       {{form|crispy}}
 
-    <br>
-       <button class="btn btn-primary mb-4" type="submit">Submit</button>
-    <br>
-   </form>
+      <!-- Right Column: Booking Form -->
+      <div class="col-lg-7">
+        <div class="booking-container bg-white">
+          <div class="mb-4">
+            <h3 class="fw-bold mb-1">Patient Details</h3>
+            <p class="text-muted small">Please provide accurate contact details so we can verify your booking.</p>
+          </div>
 
-</div>
-<div>
-{%endblock%}
+          <form action="" method="POST" novalidate>
+            {% csrf_token %}
+            
+            <div class="mb-3">
+              {{ form|crispy }}
+            </div>
+
+            <div class="mt-4 pt-2">
+              <button class="btn btn-primary btn-primary-custom w-100 justify-content-center py-3 fs-6 rounded-pill fw-semibold shadow-sm" type="submit">
+                <i class="bi bi-check2-circle fs-5"></i>
+                <span>Confirm &amp; Book Appointment</span>
+              </button>
+            </div>
+            
+            <p class="text-center text-muted small mt-3 mb-0">
+              <i class="bi bi-lock-fill me-1"></i> Your information is kept completely confidential and secure.
+            </p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}
